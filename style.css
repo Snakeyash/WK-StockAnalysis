@@ -1,63 +1,78 @@
 table {
-            width: 100%;
-            border-collapse: collapse;
-            margin:20px 0 0 0;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-            cursor: pointer; /* Add pointer cursor to indicate clickable */
-        }
+    width: 100%;
+    border-collapse: collapse;
+    margin:20px 0 0 0;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+    cursor: pointer; /* Add pointer cursor to indicate clickable */
+}
 
-        /* Alternating row colors */
-        tr:nth-child(even) {
-            background-color: #ADD8E6;
-        }
-        tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        .arrow-up {
-          display: inline-block;
-          vertical-align: middle;
-          margin-left: 5px;
-          width: 0;
-          height: 0;
-          border-left: 5px solid transparent;
-          border-right: 5px solid transparent;
-          border-bottom: 5px solid black;
-        }
+/* Alternating row colors */
+tr:nth-child(even) {
+    background-color: #ADD8E6;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+.arrow-up {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
 
-        .arrow-down {
-          display: inline-block;
-          vertical-align: middle;
-          margin-left: 5px;
-          width: 0;
-          height: 0;
-          border-left: 5px solid transparent;
-          border-right: 5px solid transparent;
-          border-top: 5px solid black;
-        }
+.arrow-down {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
 
-        /* CSS for color-changing text */
-        @keyframes colorChange {
-          0% { color: red; }
-          25% { color: blue; }
-          50% { color: green; }
-          75% { color: orange; }
-          100% { color: red; }
-        }
+/* CSS for color-changing text */
+@keyframes colorChange {
+  0% { color: red; }
+  25% { color: blue; }
+  50% { color: green; }
+  75% { color: orange; }
+  100% { color: red; }
+}
 
-        h1,h2, .footer{
-            text-align: center;
-        }
-        .colorful-text {
-          text-align: center;
-          animation: colorChange 5s infinite; /* Change color every 5 seconds */
-        }
-        .hidden {
-            display: none;
-        }
+h1,h2, .footer{
+    text-align: center;
+}
+.colorful-text {
+  text-align: center;
+  animation: colorChange 5s infinite; /* Change color every 5 seconds */
+}
+.hidden {
+    display: none;
+}
+.buy {
+    color: green;
+}
+.sell {
+    color: red;
+}
+.neutral {
+    color: blue;
+}
+.sentiment{
+    width: 80%;
+    max-width: 600px; /* Set maximum width */
+    border-collapse: collapse;
+    margin: auto; /* Center the table */
+}
