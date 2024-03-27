@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis - By World Kryptonite</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin:20px 0 0 0;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer; /* Add pointer cursor to indicate clickable */
+        }
+
+        /* Alternating row colors */
+        tr:nth-child(even) {
+            background-color: #ADD8E6;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .arrow-up {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 5px;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid black;
+        }
+
+        .arrow-down {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 5px;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid black;
+        }
+
+        /* CSS for color-changing text */
+        @keyframes colorChange {
+          0% { color: red; }
+          25% { color: blue; }
+          50% { color: green; }
+          75% { color: orange; }
+          100% { color: red; }
+        }
+
+        h1,h2, .footer{
+            text-align: center;
+        }
+        .colorful-text {
+          text-align: center;
+          animation: colorChange 5s infinite; /* Change color every 5 seconds */
+        }
+    </style>
+</head>
+<body>
+
+<h1  class="colorful-text">Welcome to Kryptonite's World</h1>
+<h2>Democratizing stock market analysis</h2>
+
+<input type="text" id="searchTicker" onkeyup="searchTable('searchTicker', 'table', 0)" placeholder="Search Ticker Symbol">
+<input type="text" id="searchSignal" onkeyup="searchTable('searchSignal', 'table', 1)" placeholder="Search Signal">
+
+<table id="table">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">Ticker Symbol<span class="arrow-up"></span></th>
+            <th onclick="sortTable(1)">Signal<span class="arrow-up"></span></th>
+            <th>Explanation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+ <td>AAPL</td>
+ <td>Sell</td>
+ <td>The stock price has been forming a head and shoulders pattern since 2022, indicating a potential bearish reversal.</td>
+ </tr>
+ <tr>
+ <td>NVDA</td>
+ <td>Buy</td>
+ <td>The stock price has formed a "W" shape, with the first trough at a price of around 266.785 and the second trough at a price of around 272.517. This is a bullish pattern, indicating that the stock may be starting to recover after a period of decline. Additionally, the volume on the most recent trough is higher than the volume on the first trough, which is another bullish sign. I would recommend buying the stock at its current price.</td>
+ </tr>
+ <tr>
+ <td>TSLA</td>
+ <td>Neutral</td>
+ <td>The provided data does not contain any clear patterns such as head and shoulders, inverse head and shoulders, key reversals, W and M shapes, Adam and Eve double tops or bottoms. The price has generally been decreasing, but there are no clear support or resistance levels. Volume has been fluctuating, but there is no clear correlation with price action.</td>
+ </tr>
+ <tr>
+ <td>META</td>
+ <td>Buy</td>
+ <td>The stock price has been in an uptrend, with higher highs and higher lows. On 2024-03-21, a key reversal pattern was formed with a higher high followed by a lower close, indicating a potential trend reversal or correction. However, the price quickly recovered and closed higher on the following day, suggesting that the uptrend is still intact. Additionally, the volume on 2024-03-21 was significantly higher than the previous day, indicating strong buying interest. Therefore, I recommend a "buy" verdict based on the bullish price action and volume patterns.</td>
+ </tr>
+ <tr>
+ <td>ASML</td>
+ <td>Sell</td>
+ <td>The price has been in a downtrend since 2024-03-22, with lower highs and lower lows. On 2024-03-26, there was a key reversal day with a long wick on the top candle, indicating selling pressure. Additionally, volume has been increasing on down days, which is a bearish sign. Therefore, I would recommend selling at this time.</td>
+ </tr>
+ <tr>
+ <td>AVGO</td>
+ <td>Buy</td>
+ <td>The price has been in an uptrend, with higher highs and higher lows. On 2024-03-21, a key reversal pattern was formed with a long white candlestick, indicating a potential trend reversal. However, the volume on this day was not significantly higher than previous days, which suggests that this key reversal may not be as strong. Overall, the price is still in an uptrend and it may be a good opportunity to buy.</td>
+ </tr>
+ <tr>
+ <td>PEP</td>
+ <td>Buy</td>
+ <td>Based on the price action and technical analysis, the stock has been in an uptrend since 2022-03-28 with higher highs and higher lows. On 2024-03-26, there was a key reversal day with a higher high and a higher low, which is a bullish sign. Additionally, the stock has broken above the resistance level of 172.00, which was tested multiple times in the past few days. The volume on the breakout day was also higher than average, which adds to the validity of the breakout. Therefore, a buy verdict is recommended.</td>
+ </tr>
+ <tr>
+ <td>AZN</td>
+ <td>Neutral</td>
+ <td>Based on the provided data from 2022-03-28 to 2024-03-26, there are no clear patterns such as price action, support and resistance, head and shoulders, inverse head and shoulder, key reversals, W and M shape, Adam and Eve double top, Adam and Eve double bottom, or significant volume changes that would warrant a buy or sell verdict. The price has been relatively stable with minor fluctuations. Therefore, a neutral verdict is given.</td>
+ </tr>
+ <tr>
+ <td>COST</td>
+ <td>Buy</td>
+ <td>Based on the price action and volume data provided, there are a few bullish indicators that suggest buying. First, the price has been in an overall upward trend since 2022-03-28, with several higher highs and higher lows. Additionally, the volume has been increasing as the price has been rising, which is often a bullish sign. There are also a few potential bullish patterns that have formed, such as a possible inverse head and shoulders pattern on 2022-03-28 to 2022-03-31 and a possible W-shape pattern on 2024-03-22 to 2024-03-26. However, it is important to note that these patterns are not yet confirmed and should be monitored for confirmation. Overall, the combination of the overall upward trend, increasing volume, and potential bullish patterns suggest a buy verdict.</td>
+ </tr>
+ <tr>
+ <td>CSCO</td>
+ <td>Neutral</td>
+ <td>Based on the provided historical price data, there are no clear patterns such as price action, support and resistance, head and shoulders, inverse head and shoulder, key reversals, W and M shape, Adam and Eve double top, Adam and Eve double bottom, or significant volume changes that would suggest a strong buy or sell signal at the moment. Therefore, a neutral stance is recommended.</td>
+ </tr>
+ <tr>
+ <td>TMUS</td>
+ <td>Buy</td>
+ <td>Based on the price action and technical analysis, the stock price has been in an uptrend since 2022-03-28, with higher highs and higher lows. There are also several bullish patterns present such as a W shape (2022-03-28 to 2022-03-31) and a key reversal on 2022-04-01. Additionally, volume has been increasing on up days, which is a bullish sign. Therefore, I would recommend a "buy" verdict.</td>
+ </tr>
+    </tbody>
+</table>
+
+<div class="footer colorful-text">
+  <p>Support my work by subscribing to my YouTube Channel and following me on my X account</p>
+    <p><a target="_blank" href="https://www.youtube.com/@worldkryptonite">YouTube - World Kryptonite</a><span> ¦ </span>
+        <a target="_blank" href="https://www.x.com/WorldKryptonite">X - World Kryptonite</a>
+    </p>
+</div>
+
+<script>
+function searchTable(inputId, tableId, columnIndex) {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById(inputId);
+    filter = input.value.toUpperCase();
+    table = document.getElementById(tableId);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[columnIndex];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function sortTable(colIndex) {
+  var table, rows, switching, i, x, y, shouldSwitch, direction, switchcount = 0;
+  table = document.getElementById("table");
+  switching = true;
+  // Set the sorting direction to ascending
+  direction = "asc";
+  while (switching) {
+    switching = false;
+    rows = table.rows;
+    // Loop through all table rows (except the first, which contains the table headers)
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      // Get the two elements you want to compare: current and next row
+      x = rows[i].getElementsByTagName("td")[colIndex];
+      y = rows[i + 1].getElementsByTagName("td")[colIndex];
+      // Check if the two rows should switch place based on the sorting direction
+      if (direction == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop
+          shouldSwitch= true;
+          break;
+        }
+      } else if (direction == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      // Perform the switch and mark the switch as done
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      // Increase the switch count
+      switchcount ++;
+    } else {
+      // If no switching has been done and the direction is ascending,
+      // set the direction to descending and run the loop again
+      if (switchcount == 0 && direction == "asc") {
+        direction = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
