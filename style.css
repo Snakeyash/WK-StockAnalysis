@@ -10,16 +10,32 @@ th, td {
 }
 th {
     background-color: #f2f2f2;
+}
+
+tr.parent-row, tr.child-table-parent, tr.action {
     cursor: pointer; /* Add pointer cursor to indicate clickable */
 }
 
+tr.explanation-table, tr.child-table, tr.daily-child-data {
+    display:none;
+}
+
 /* Alternating row colors */
-tr:nth-child(even) {
+tr.even {
     background-color: #ADD8E6;
 }
-tr:nth-child(odd) {
+tr {
     background-color: #ffffff;
 }
+
+table .child-table tr:nth-child(even){
+    background-color: white;
+}
+
+table .child-table tr:nth-child(odd){
+    background-color: grey;
+}
+
 .arrow-up {
   display: inline-block;
   vertical-align: middle;
@@ -61,13 +77,13 @@ h1,h2, .footer{
 .hidden {
     display: none;
 }
-.buy {
+#buy{
     color: green;
 }
-.sell {
+#sell {
     color: red;
 }
-.neutral {
+#inconclusive {
     color: blue;
 }
 .sentiment{
@@ -80,4 +96,75 @@ h1,h2, .footer{
 
 #dataTable{
     margin:10px 0;
+}
+
+.select2-container {
+    width: 100%;
+  }
+
+#symbolDropdown {
+  width: 200px; /* Adjust the width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+#symbolDropdown select {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#symbolDropdown select:focus {
+  outline: none;
+}
+
+/* Style the container */
+.select2-container {
+  width: 200px; /* Adjust the width as needed */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background: #FFFFFF;
+}
+
+/* Style the selection */
+.select2-selection {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the selected option */
+.select2-selection__rendered {
+  padding: 5px;
+}
+
+/* Style the clear button */
+.select2-selection__clear {
+  cursor: pointer;
+}
+
+/* Style the dropdown arrow */
+.select2-selection__arrow {
+  margin-right: 5px;
+}
+
+/* Style the dropdown list */
+.select2-results__option {
+  padding: 5px;
+}
+
+/* Style the highlighted option */
+.select2-results__option--highlighted {
+  background-color: #f0f0f9;
 }
