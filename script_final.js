@@ -50,6 +50,7 @@ $(document).ready(function() {
             // Toggle the visibility of the explanation and child tables with corresponding class
             $('.explanation-table.' + parentId).show();
             $('.child-table.' + parentId).show();
+            $('.child-table.' + parentId + " .child-table-parent").click();
         });
 
         $('.child-table .child-table-parent').click(function() {
@@ -59,11 +60,11 @@ $(document).ready(function() {
             $('tr.' + classes[1] + ' .daily-child-data').toggle();
         });
 
-        $('tr.action').click(function(){
+        $('td.action').click(function(){
             hide_elements();
             $('.parent-row').hide();
             var targetId = $(this).attr('id');
-            if (targetId=='All'){
+            if (targetId=='all' || targetId=='all_daily'){
                 $('.parent-row').show();
             }else{
                 $('.' + targetId).show();
@@ -85,5 +86,5 @@ $(document).ready(function() {
         });
 
         $('.parent-row:first').click();
-        $('.child-table:first .child-table-parent').click();
+        //$('.child-table:first .child-table-parent').click();
     });
