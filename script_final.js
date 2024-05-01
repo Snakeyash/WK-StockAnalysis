@@ -57,7 +57,7 @@ $(document).ready(function() {
             // Get the ID of the parent row
             classes = $(this).attr('class').split(" ");
             //console.log('tr.' + classes[1] + ' .daily-child-data');
-            $('tr.' + classes[1] + ' .daily-child-data').toggle();
+            $('tr.' + classes[1] + ' .daily-child-data:even').toggle();
         });
 
         $('td.action').click(function(){
@@ -85,6 +85,51 @@ $(document).ready(function() {
             applyRowColors();
         });
 
+        // Show next parent row when next button is clicked
+        $('.nextBtn').on('click', function() {
+            var currentRow = $('#dataTable tbody tr.parent-row:visible');
+            var currentId = currentRow.attr("id");
+            var nextRow = currentRow.nextAll('.parent-row:first');
+            if (nextRow.length > 0) {
+                currentRow.hide();
+                $('tr.' + currentId).hide();
+                nextRow.show();
+                nextRow.click();
+            }
+        });
+
+        // Show previous parent row when previous button is clicked
+        $('.prevBtn').on('click', function() {
+            var currentRow = $('#dataTable tbody tr.parent-row:visible');
+            var currentId = currentRow.attr("id");
+            var prevRow = currentRow.prevAll('.parent-row:first');
+            if (prevRow.length > 0) {
+                currentRow.hide();
+                $('tr.' + currentId).hide();
+                prevRow.show();
+                prevRow.click();
+            }
+        });
+
+        // Initially hide all parent rows except the first one
+        $('#dataTable tbody tr.parent-row:not(:first)').hide();
+
         $('.parent-row:first').click();
         //$('.child-table:first .child-table-parent').click();
-    });
+
+        // Show popup when previous row is clicked
+        $('.daily-child-data').on('click', function() {
+            // Hide any previously shown popups
+            var popup_text = $(this).next().find('td').html()
+            //console.log(popup_text);
+            $('.popup .popup-content').html(popup_text);
+            $('.popup').show();
+            // Show the next row as popup
+            //$(this).next().show();
+        });
+
+        // Close popup when close button is clicked
+        $('.close').on('click', function() {
+            $('.popup').hide();
+        });
+});
